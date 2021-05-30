@@ -10,11 +10,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { CoinOfTheDayComponent } from './coin-of-the-day/coin-of-the-day.component';
+import { CryptoPricesComponent } from './crypto-prices/crypto-prices.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    CoinOfTheDayComponent,
+    CryptoPricesComponent
   ],
   imports: [
     BrowserModule,

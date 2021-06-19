@@ -10,15 +10,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { CoinOfTheDayComponent } from './coin-of-the-day/coin-of-the-day.component';
-import { CryptoPricesComponent } from './crypto-prices/crypto-prices.component';
+import { CoinOfTheDayComponent } from './dashboard/coin-of-the-day/coin-of-the-day.component';
+import { CryptoPricesComponent } from './dashboard/crypto-prices/crypto-prices.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     CoinOfTheDayComponent,
-    CryptoPricesComponent
+    CryptoPricesComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,9 +31,10 @@ import { CryptoPricesComponent } from './crypto-prices/crypto-prices.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

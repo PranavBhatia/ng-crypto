@@ -1,1 +1,13 @@
-Crpto prices
+<mat-nav-list>
+  <mat-list-item
+    *ngFor="let crypto of marketData"
+    class="text-white"
+    [class.bg-success]="crypto.pc > 0"
+    [class.bg-danger]="crypto.pc < 0"
+  >
+    <h3 matLine>{{ crypto.s }} ({{ crypto.n }})</h3>
+    <p matLine>{{ crypto.mc | currency }}</p>
+    {{ crypto.p | currency }}
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-nav-list>

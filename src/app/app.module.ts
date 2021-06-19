@@ -14,6 +14,7 @@ import { CoinOfTheDayComponent } from './dashboard/coin-of-the-day/coin-of-the-d
 import { CryptoPricesComponent } from './dashboard/crypto-prices/crypto-prices.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CoinOfTheDayComponent,
     CryptoPricesComponent,
     DashboardComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

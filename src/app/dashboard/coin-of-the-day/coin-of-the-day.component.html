@@ -1,23 +1,19 @@
-<div class="container text-center">
-  <div class="row mb-3">
-    <div class="col-12">
-      <h3>Coin of the day!</h3>
-    </div>
-  </div>
-
-  <div class="row mb-3">
-      <div class="col-12">
-        $43,069.89
-      </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12">
-      <p>
-        Bitcoin is a decentralized digital currency, without a central bank or
-        single administrator, that can be sent from user to user on the
-        peer-to-peer bitcoin network without the need for intermediaries.
-      </p>
-    </div>
-  </div>
-</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ coinOfTheDay?.symbol }}</mat-card-title>
+    <mat-card-subtitle>{{ coinOfTheDay?.name }}</mat-card-subtitle>
+  </mat-card-header>
+  <!-- <img
+    mat-card-image
+    src="https://thumbs.dreamstime.com/b/stellar-xlm-cryptocurrency-coin-purple-background-physical-placed-reflective-surface-lit-pink-lights-208090425.jpg"
+    alt="Photo of a Stellar Coin"
+  /> -->
+  <img
+    mat-card-image
+    src="https://thumbs.dreamstime.com/b/new-token-cryptocurrency-stellar-xlm-background-stack-coins-coin-144057140.jpg"
+    alt="Photo of a Stellar Coin"
+  />
+  <mat-card-content>
+    The coin of the day is: {{ coinOfTheDay?.name }}
+  </mat-card-content>
+</mat-card>

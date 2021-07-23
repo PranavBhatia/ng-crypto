@@ -1,14 +1,23 @@
-<mat-nav-list>
-  <mat-list-item
-    *ngFor="let crypto of marketData"
-    [routerLink]="['crypto', crypto.s]"
-    class="text-white"
-    [class.bg-success]="crypto.pc > 0"
-    [class.bg-danger]="crypto.pc < 0"
-  >
-    <h3 matLine>{{ crypto.s }} ({{ crypto.n }})</h3>
-    <p matLine>{{ crypto.mc | currency }}</p>
-    {{ crypto.p | currency }}
-    <mat-divider></mat-divider>
-  </mat-list-item>
-</mat-nav-list>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Famous Cryptocurrencies</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-nav-list>
+      <mat-list-item
+        *ngFor="let crypto of marketData"
+        [routerLink]="['crypto', crypto.s]"
+        class="text-white"
+        [class.bg-success]="crypto.pc > 0"
+        [class.bg-danger]="crypto.pc < 0"
+        [class.bg-secondary]="crypto.pc === 0"
+      >
+        <h3 matLine>{{ crypto.s }} ({{ crypto.n }})</h3>
+        <p matLine>{{ crypto.mc | currency }}</p>
+        {{ crypto.p | currency }}
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-card-content>
+</mat-card>

@@ -23,7 +23,7 @@ export class CoinOfTheDayService {
     const key = 'uyxdwe6j5311uak0b29e5c';
     return this.httpClient
       .get<{ config: any; data: { name: string; symbol: string }; usage: any }>(
-        `https://api.lunarcrush.com/v2?data=market&key=${key}`
+        `https://api.lunarcrush.com/v2?data=coinoftheday&key=${key}`
       )
       .pipe(
         tap((response) => {

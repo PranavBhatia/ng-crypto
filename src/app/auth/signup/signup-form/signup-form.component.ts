@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
+
+import {
+  CrossFieldErrorMatcher,
+  confirmPasswordValidator,
+} from './confirm-password.directive';
 
 @Component({
   selector: 'app-signup-form',
@@ -7,6 +12,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./signup-form.component.css'],
 })
 export class SignupFormComponent implements OnInit {
+  errorMatcher = new CrossFieldErrorMatcher();
+
   signupForm: FormGroup = new FormGroup(
     {
       name: new FormControl('', [Validators.required]),
@@ -15,14 +22,16 @@ export class SignupFormComponent implements OnInit {
         Validators.required,
         Validators.minLength(5),
       ]),
-      confirmPassword: new FormControl('', [
-        Validators.required,
-        Validators.minLength(5),
-      ]),
-    }
+      confirmPassword: new FormControl('', [Validators.required]),
+    },
+    { validators: confirmPasswordValidator }
   );
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSubmit() {
+    console.log(this.signupForm.value);
+  }
 }

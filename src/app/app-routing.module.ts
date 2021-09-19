@@ -7,10 +7,11 @@ const routes: Routes = [
   { path: '', component: DashboardComponent },
   {
     path: 'crypto/:id',
-    loadChildren: () =>
-      import('./crypto-details/crypto-details.module').then(
-        (m) => m.CryptoDetailsModule
-      ),
+    loadChildren: () => import('./crypto-details/crypto-details.module').then((m) => m.CryptoDetailsModule),
+  },
+  {
+     path: 'auth/signup',
+     loadChildren: () => import('./auth/signup/signup.module').then(m => m.SignupModule)
   },
   {
     path: '**',

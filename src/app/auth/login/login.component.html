@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-12 col-lg-4 offset-lg-4">
+      <mat-card class="text-center">
+        <mat-card-header>
+          <mat-card-title> Login </mat-card-title>
+          <img mat-card-avatar src="assets/images/bitcoin.png" />
+        </mat-card-header>
+        <mat-card-content>
+          <form #loginForm="ngForm" class="mt-3" (ngSubmit)="onLogin(loginForm)">
+            <p>
+              <mat-form-field class="w-75" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input
+                  email
+                  ngModel
+                  matInput
+                  required
+                  id="email"
+                  name="email"
+                  type="email"
+                  #email="ngModel"
+                />
+                <mat-error *ngIf="email.invalid && email.errors?.required">
+                  Email is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="email.invalid && email.errors?.email">
+                  Please enter a valid email address
+                </mat-error>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field class="w-75" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input
+                  ngModel
+                  required
+                  matInput
+                  minlength="5"
+                  name="password"
+                  type="password"
+                  #password="ngModel"
+                  autocomplete="new-password"
+                />
+                <mat-error
+                  *ngIf="password.invalid && password.errors?.required"
+                >
+                  Password is <strong>required</strong>
+                </mat-error>
+                <mat-error
+                  *ngIf="password.invalid && password.errors?.minlength"
+                >
+                  Password should alteast be <strong>5 characters</strong>
+                </mat-error>
+              </mat-form-field>
+            </p>
+
+            <button
+              type="submit"
+              color="primary"
+              mat-raised-button
+              [disabled]="loginForm.invalid"
+            >
+              Login
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

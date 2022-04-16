@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import {
   CrossFieldErrorMatcher,
@@ -27,11 +29,33 @@ export class SignupFormComponent implements OnInit {
     { validators: confirmPasswordValidator }
   );
 
-  constructor() {}
+  constructor(
+    private router: Router,
+    private httpClient: HttpClient,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {}
 
   onSubmit() {
-    console.log(this.signupForm.value);
+    console.log('signupForm', this.signupForm.value);
+
+    this.httpClient
+      .post(
+        'https://angular-crypto-test-default-rtdb.firebaseio.com/users.json',
+        this.signupForm.value
+      )
+      .subscribe(
+        (response) => {
+          console.log('response', response);
+          this.signupForm.reset();
+          this.router.navigate(['../', 'login'], {
+            relativeTo: this.activatedRoute,
+          });
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 }

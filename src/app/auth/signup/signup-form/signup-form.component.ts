@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { UntypedFormGroup, Validators, UntypedFormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import {
@@ -16,15 +16,15 @@ import {
 export class SignupFormComponent implements OnInit {
   errorMatcher = new CrossFieldErrorMatcher();
 
-  signupForm: FormGroup = new FormGroup(
+  signupForm: UntypedFormGroup = new UntypedFormGroup(
     {
-      name: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [
+      name: new UntypedFormControl('', [Validators.required]),
+      email: new UntypedFormControl('', [Validators.required, Validators.email]),
+      password: new UntypedFormControl('', [
         Validators.required,
         Validators.minLength(5),
       ]),
-      confirmPassword: new FormControl('', [Validators.required]),
+      confirmPassword: new UntypedFormControl('', [Validators.required]),
     },
     { validators: confirmPasswordValidator }
   );

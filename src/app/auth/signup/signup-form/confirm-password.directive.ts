@@ -1,6 +1,6 @@
 import {
   AbstractControl,
-  FormControl,
+  UntypedFormControl,
   FormGroupDirective,
   NgForm,
   ValidationErrors,
@@ -22,7 +22,7 @@ export const confirmPasswordValidator: ValidatorFn = (
 /** Error when the parent is invalid */
 export class CrossFieldErrorMatcher implements ErrorStateMatcher {
   isErrorState(
-    control: FormControl | null,
+    control: UntypedFormControl | null,
     form: FormGroupDirective | NgForm | null
   ): boolean {
     return !!(

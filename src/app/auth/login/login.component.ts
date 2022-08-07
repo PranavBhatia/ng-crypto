@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +15,14 @@ export class LoginComponent implements OnInit {
   onLogin(loginForm: NgForm) {
     console.log(loginForm.value);
     this.httpClient
-      .get('https://angular-crypto-test-default-rtdb.firebaseio.com/users.json')
+      .get(
+        'https://angular-crypto-test-default-rtdb.firebaseio.com/users.json',
+        {
+          params: new HttpParams()
+            .set('orderBy', '"email"')
+            .set('equalTo', `"${loginForm.value.email}"`),
+        }
+      )
       .subscribe((users) => {
         console.log(users);
       });

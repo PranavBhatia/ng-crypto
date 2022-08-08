@@ -1,11 +1,26 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Injectable, NgModule } from '@angular/core';
+import {
+  ActivatedRouteSnapshot,
+  Resolve,
+  RouterModule,
+  RouterStateSnapshot,
+  Routes,
+} from '@angular/router';
 import { CryptoDetailsComponent } from './crypto-details.component';
 
-const routes: Routes = [{ path: '', component: CryptoDetailsComponent }];
+@Injectable({ providedIn: 'root' })
+export class ResolvedChildAtTitle implements Resolve<string> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): string {
+    return `Crypto - ${route.paramMap.get('id')}`;
+  }
+}
+
+const routes: Routes = [
+  { path: '', title: ResolvedChildAtTitle, component: CryptoDetailsComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class CryptoDetailsRoutingModule { }
+export class CryptoDetailsRoutingModule {}

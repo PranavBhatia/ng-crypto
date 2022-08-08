@@ -4,14 +4,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: '', title: 'Crypto Price Tracker', component: DashboardComponent },
   {
     path: 'crypto/:id',
-    loadChildren: () => import('./crypto-details/crypto-details.module').then((m) => m.CryptoDetailsModule),
+    loadChildren: () =>
+      import('./crypto-details/crypto-details.module').then(
+        (m) => m.CryptoDetailsModule
+      ),
   },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: '**',

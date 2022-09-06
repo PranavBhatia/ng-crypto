@@ -1,7 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormGroup, Validators, UntypedFormControl } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  Validators,
+  UntypedFormControl,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 import {
   CrossFieldErrorMatcher,
@@ -19,7 +24,10 @@ export class SignupFormComponent implements OnInit {
   signupForm: UntypedFormGroup = new UntypedFormGroup(
     {
       name: new UntypedFormControl('', [Validators.required]),
-      email: new UntypedFormControl('', [Validators.required, Validators.email]),
+      email: new UntypedFormControl('', [
+        Validators.required,
+        Validators.email,
+      ]),
       password: new UntypedFormControl('', [
         Validators.required,
         Validators.minLength(5),
@@ -42,8 +50,8 @@ export class SignupFormComponent implements OnInit {
 
     this.httpClient
       .post(
-        'https://angular-crypto-test-default-rtdb.firebaseio.com/users.json',
-        this.signupForm.value
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseApiKey}`,
+        { ...this.signupForm.value, returnSecureToken: true }
       )
       .subscribe(
         (response) => {

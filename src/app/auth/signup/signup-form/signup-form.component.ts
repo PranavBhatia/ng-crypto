@@ -5,6 +5,7 @@ import {
   Validators,
   UntypedFormControl,
 } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
@@ -39,8 +40,9 @@ export class SignupFormComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private snackBar: MatSnackBar,
     private httpClient: HttpClient,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {}
@@ -57,12 +59,23 @@ export class SignupFormComponent implements OnInit {
         (response) => {
           console.log('response', response);
           this.signupForm.reset();
-          this.router.navigate(['../', 'login'], {
-            relativeTo: this.activatedRoute,
+
+          this.snackBar.open('Account Created!', 'Ok', {
+            verticalPosition: 'top',
+            horizontalPosition: 'center',
+            panelClass: 'bg-success',
           });
+
+          this.router.navigate(['/']);
         },
         (error) => {
-          console.log(error);
+          let errorMessage = 'Signup Failed - ' + error.error.error.message;
+
+          this.snackBar.open(errorMessage, 'Ok', {
+            verticalPosition: 'top',
+            horizontalPosition: 'center',
+            panelClass: 'bg-danger',
+          });
         }
       );
   }

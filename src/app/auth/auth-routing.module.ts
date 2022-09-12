@@ -14,6 +14,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./login/login.module').then((m) => m.LoginModule),
   },
+  {
+    path: 'login/reset',
+    loadChildren: () =>
+      import('./reset/reset.module').then((m) => m.ResetModule),
+  },
 ];
 
 @NgModule({

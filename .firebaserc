@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-crypto-test": {
+      "hosting": {
+        "ng-crypto": [
+          "angular-crypto-test"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-crypto-test"
+  }
+}

@@ -101,6 +101,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "ng-crypto:build:production",
+            "firebaseProject": "angular-crypto-test",
+            "firebaseHostingSite": "angular-crypto-test"
+          }
         }
       }
     }

@@ -9,6 +9,7 @@ import { SignupComponent } from './signup.component';
 import { SignupRoutingModule } from './signup-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { FirebaseModule } from 'src/app/shared/firebase/firebase.module';
 
 @NgModule({
   declarations: [SignupComponent, SignupFormComponent],
@@ -16,6 +17,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     CommonModule,
     MatCardModule,
     MatInputModule,
+    FirebaseModule,
     MatButtonModule,
     MatFormFieldModule,
     SignupRoutingModule,

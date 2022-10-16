@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
+import { FirebaseModule } from 'src/app/shared/firebase/firebase.module';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -15,6 +16,7 @@ import { LoginRoutingModule } from './login-routing.module';
     FormsModule,
     CommonModule,
     MatCardModule,
+    FirebaseModule,
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,

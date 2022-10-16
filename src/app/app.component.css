@@ -15,3 +15,7 @@
   top: 0;
   z-index: 1;
 }
+
+.filler {
+  margin: 0 auto;
+}

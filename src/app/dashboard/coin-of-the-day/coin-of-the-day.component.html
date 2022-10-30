@@ -3,17 +3,12 @@
     <mat-card-title>{{ coinOfTheDay?.symbol }}</mat-card-title>
     <mat-card-subtitle>{{ coinOfTheDay?.name }}</mat-card-subtitle>
   </mat-card-header>
-  <!-- <img
-    mat-card-image
-    src="https://thumbs.dreamstime.com/b/stellar-xlm-cryptocurrency-coin-purple-background-physical-placed-reflective-surface-lit-pink-lights-208090425.jpg"
-    alt="Photo of a Stellar Coin"
-  /> -->
   <img
     mat-card-image
-    src="https://thumbs.dreamstime.com/b/new-token-cryptocurrency-stellar-xlm-background-stack-coins-coin-144057140.jpg"
-    alt="Photo of a Stellar Coin"
+    src="https://images.unsplash.com/photo-1631603090989-93f9ef6f9d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
+    alt="Unplash crypto pic"
   />
   <mat-card-content>
-    The coin of the day is: {{ coinOfTheDay?.name }}
+    The coin of the day is: <strong>{{ coinOfTheDay?.name }}</strong>
   </mat-card-content>
 </mat-card>

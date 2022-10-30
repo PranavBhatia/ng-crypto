@@ -8,5 +8,6 @@ export const environment = {
     authDomain: 'angular-crypto-test.firebaseapp.com',
     messagingSenderId: '667240062294',
   },
-  production: true
+  firebaseApiKey: 'AIzaSyC2-qoNmJmIHX6CHMm0r3NqomdJPNHLziQ',
+  production: true,
 };

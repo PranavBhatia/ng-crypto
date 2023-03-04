@@ -1,0 +1,3 @@
+[submodule "firebase-new-user-notification"]
+	path = firebase-new-user-notification
+	url = https://github.com/PranavBhatia/firebase-new-user-notification

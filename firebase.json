@@ -31,5 +31,17 @@
         "destination": "/index.html"
       }
     ]
-  }
+  },
+  "functions": [
+    {
+      "source": "firebase-new-user-notification/new-user-notification",
+      "codebase": "new-user-notification",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ]
+    }
+  ]
 }

@@ -23,6 +23,8 @@
     "@angular/router": "^15.1.4",
     "bootstrap": "^5.0.1",
     "firebase": "^9.11.0",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.1",
     "firebaseui": "^6.0.1",
     "firebaseui-angular": "^6.1.2",
     "rxjs": "^7.5.7",

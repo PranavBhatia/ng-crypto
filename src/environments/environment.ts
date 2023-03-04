@@ -11,9 +11,10 @@ export const environment = {
     apiKey: 'AIzaSyC2-qoNmJmIHX6CHMm0r3NqomdJPNHLziQ',
     authDomain: 'angular-crypto-test.firebaseapp.com',
     messagingSenderId: '667240062294',
+    measurementId: 'G-ZKVM5Q40J4',
   },
   production: false,
-  firebaseApiKey: 'AIzaSyC2-qoNmJmIHX6CHMm0r3NqomdJPNHLziQ'
+  firebaseApiKey: 'AIzaSyC2-qoNmJmIHX6CHMm0r3NqomdJPNHLziQ',
 };
 
 /*

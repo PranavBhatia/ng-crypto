@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { firebase, firebaseui, FirebaseUIModule } from 'firebaseui-angular';
+import { MessagingModule } from '@angular/fire/messaging';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -32,8 +33,14 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   imports: [
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
+    MessagingModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
   ],
-  exports: [FirebaseUIModule, AngularFireModule, AngularFireAuthModule],
+  exports: [
+    FirebaseUIModule,
+    AngularFireModule,
+    AngularFireAuthModule,
+    MessagingModule,
+  ],
 })
 export class FirebaseModule {}

@@ -1,15 +1,15 @@
-import { Observable, Subscribable, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { SignoutButtonComponent } from './signout-button/signout-button.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,15 +17,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   styleUrls: ['./app.component.css'],
   standalone: true,
   imports: [
+    NgIf,
+    AsyncPipe,
+    RouterModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatListModule,
-    RouterLink,
-    MatButtonModule,
-    MatIconModule,
-    NgIf,
-    RouterOutlet,
-    AsyncPipe,
+    SignoutButtonComponent,
   ],
 })
 export class AppComponent implements OnInit, OnDestroy {
@@ -36,26 +36,10 @@ export class AppComponent implements OnInit, OnDestroy {
       shareReplay()
     );
   isLoggedIn: boolean = false;
-  private subscription!: Subscription;
 
-  constructor(
-    private router: Router,
-    private breakpointObserver: BreakpointObserver,
-    private angularFireAuth: AngularFireAuth
-  ) {}
+  constructor(private breakpointObserver: BreakpointObserver) {}
 
-  ngOnInit(): void {
-    this.subscription = this.angularFireAuth.authState.subscribe((user) => {
-      this.isLoggedIn = !!user;
-    });
-  }
+  ngOnInit(): void {}
 
-  logout() {
-    this.angularFireAuth.signOut();
-    this.router.navigate(['auth', 'signup']);
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 }

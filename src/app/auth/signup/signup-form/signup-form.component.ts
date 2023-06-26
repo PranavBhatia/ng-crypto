@@ -1,10 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {
-  UntypedFormGroup,
-  Validators,
-  UntypedFormControl,
-} from '@angular/forms';
+import { UntypedFormGroup, Validators, UntypedFormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
@@ -13,11 +9,17 @@ import {
   CrossFieldErrorMatcher,
   confirmPasswordValidator,
 } from './confirm-password.directive';
+import { MatButtonModule } from '@angular/material/button';
+import { NgIf } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
-  selector: 'app-signup-form',
-  templateUrl: './signup-form.component.html',
-  styleUrls: ['./signup-form.component.css'],
+    selector: 'app-signup-form',
+    templateUrl: './signup-form.component.html',
+    styleUrls: ['./signup-form.component.css'],
+    standalone: true,
+    imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, NgIf, MatButtonModule]
 })
 export class SignupFormComponent implements OnInit {
   errorMatcher = new CrossFieldErrorMatcher();

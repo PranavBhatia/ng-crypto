@@ -6,12 +6,10 @@ import { CryptoDetailsComponent } from './crypto-details.component';
 
 
 @NgModule({
-  declarations: [
-    CryptoDetailsComponent
-  ],
-  imports: [
-    CommonModule,
-    CryptoDetailsRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        CryptoDetailsRoutingModule,
+        CryptoDetailsComponent
+    ]
 })
 export class CryptoDetailsModule { }

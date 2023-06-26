@@ -10,15 +10,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [ResetComponent],
-  imports: [
-    FormsModule,
-    CommonModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    ResetRoutingModule,
-  ],
+    imports: [
+        FormsModule,
+        CommonModule,
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        ResetRoutingModule,
+        ResetComponent
+    ]
 })
 export class ResetModule {}

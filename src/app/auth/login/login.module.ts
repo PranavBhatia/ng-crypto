@@ -11,16 +11,16 @@ import { LoginRoutingModule } from './login-routing.module';
 import { FirebaseModule } from 'src/app/shared/modules/firebase/firebase.module';
 
 @NgModule({
-  declarations: [LoginComponent],
-  imports: [
-    FormsModule,
-    CommonModule,
-    MatCardModule,
-    FirebaseModule,
-    MatInputModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    LoginRoutingModule,
-  ],
+    imports: [
+        FormsModule,
+        CommonModule,
+        MatCardModule,
+        FirebaseModule,
+        MatInputModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        LoginRoutingModule,
+        LoginComponent
+    ]
 })
 export class LoginModule {}

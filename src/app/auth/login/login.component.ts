@@ -1,12 +1,15 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { FirebaseUISignInFailure, FirebaseUISignInSuccessWithAuthResult } from 'firebaseui-angular';
+import { FirebaseUISignInFailure, FirebaseUISignInSuccessWithAuthResult, FirebaseUIModule } from 'firebaseui-angular';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css'],
+    standalone: true,
+    imports: [MatCardModule, FirebaseUIModule]
 })
 export class LoginComponent implements OnInit {
   constructor(private afAuth: AngularFireAuth, private router: Router) { }

@@ -11,15 +11,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
-  declarations: [SignupComponent, SignupFormComponent],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    SignupRoutingModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        SignupRoutingModule,
+        ReactiveFormsModule,
+        SignupComponent, SignupFormComponent
+    ]
 })
 export class SignupModule {}

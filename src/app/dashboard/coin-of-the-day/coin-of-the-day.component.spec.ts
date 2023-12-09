@@ -8,8 +8,8 @@ describe('CoinOfTheDayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoinOfTheDayComponent ]
-    })
+    imports: [CoinOfTheDayComponent]
+})
     .compileComponents();
   });
 

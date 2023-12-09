@@ -14,7 +14,7 @@
       </button>
       <span routerLink="/" role="button">Crypto Price Tracker</span>
       <span class="filler"></span>
-      <button mat-flat-button color="accent" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+      <app-signout-button></app-signout-button>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

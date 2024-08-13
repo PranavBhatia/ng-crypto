@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-crypto:build:production"
+              "buildTarget": "ng-crypto:build:production"
             },
             "development": {
-              "browserTarget": "ng-crypto:build:development"
+              "buildTarget": "ng-crypto:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-crypto:build"
+            "buildTarget": "ng-crypto:build"
           }
         },
         "test": {
